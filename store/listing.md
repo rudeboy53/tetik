@@ -5,6 +5,7 @@ Copy these into the Developer Dashboard. Everything here describes version 1.6.2
 ## Package
 
 - Upload: `store/tetik-1.6.2.zip` (built with `store/build.sh`)
+- Description box: paste `store/description.txt` as is (English, then Turkish; the dashboard has one description for all languages)
 - Category: Tools (under Productivity)
 - Language: English (add Turkish as a second listing language)
 
