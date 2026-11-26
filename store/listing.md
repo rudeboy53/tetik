@@ -100,6 +100,7 @@ Resmî değildir. Microsoft, Xbox ya da Rockstar Games ile hiçbir bağlantısı
 - Store icon 128×128: `icons/icon128.png`
 - Screenshots 1280×800: `store/screenshots/panel-1280x800.jpg`, `mouse-1280x800.jpg`, `drive-1280x800.jpg`
 - Small promo tile 440×280: `store/promo-440x280.jpg`
+- Marquee promo tile 1400×560 (optional): `store/marquee-1400x560.jpg`
 
 ## Privacy practices tab
 
