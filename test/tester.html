@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tetik — test sayfası</title>
+<style>
+  body { margin: 0; background: #0b0d10; color: #e8e8e8; font: 14px/1.5 -apple-system, BlinkMacSystemFont, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 70px 16px 40px; }
+  p { color: #a9adb5; }
+  .grid { display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; margin-top: 20px; }
+  canvas { background: #14161b; border-radius: 12px; border: 1px solid #262a31; }
+  .btns { display: grid; grid-template-columns: repeat(6, 64px); gap: 6px; }
+  .b { padding: 6px 0; text-align: center; border-radius: 6px; background: #1b1e24; color: #8b9099; font-size: 12px; }
+  .b.on { background: #107c10; color: #fff; }
+  #info { margin-top: 16px; font: 12px/1.6 ui-monospace, Menlo, monospace; color: #a9adb5; white-space: pre; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Tetik — test sayfası</h1>
+  <p>Xbox olmadan eşlemeyi denemek için. Üstteki <b>Başlat</b>'a (ya da F3) bas, mouse kilitlenir.
+     Sayfa, Xbox'ın yaptığı gibi <code>navigator.getGamepads()</code> okur ve sonucu çizer. Esc ile çık.</p>
+  <div class="grid">
+    <canvas id="ls" width="180" height="180"></canvas>
+    <canvas id="rs" width="180" height="180"></canvas>
+    <div class="btns" id="btns"></div>
+  </div>
+  <div id="info"></div>
+</main>
+<script src="../src/config.js"></script>
+<script src="../src/mouse.js"></script>
+<script src="../src/mapper.js"></script>
+<script src="../src/detect.js"></script>
+<script src="../src/gamepad.js"></script>
+<script src="../src/input.js"></script>
+<script src="../src/ui.js"></script>
+<script src="../src/main.js"></script>
+<script>
+  const NAMES = ['A','B','X','Y','LB','RB','LT','RT','View','Menu','L3','R3','↑','↓','←','→','Xbox'];
+  const btns = document.getElementById('btns');
+  const cells = NAMES.map((n) => {
+    const d = document.createElement('div');
+    d.className = 'b';
+    d.textContent = n;
+    btns.appendChild(d);
+    return d;
+  });
+  function stick(id, x, y, label) {
+    const c = document.getElementById(id), g = c.getContext('2d'), r = 78, cx = 90, cy = 90;
+    g.clearRect(0, 0, 180, 180);
+    g.strokeStyle = '#3a3f48'; g.lineWidth = 1;
+    g.beginPath(); g.arc(cx, cy, r, 0, Math.PI * 2); g.stroke();
+    g.beginPath(); g.moveTo(cx - r, cy); g.lineTo(cx + r, cy); g.moveTo(cx, cy - r); g.lineTo(cx, cy + r); g.stroke();
+    g.fillStyle = '#5fdd8a';
+    g.beginPath(); g.arc(cx + x * r, cy + y * r, 7, 0, Math.PI * 2); g.fill();
+    g.fillStyle = '#8b9099'; g.font = '12px sans-serif'; g.fillText(label, 8, 16);
+  }
+  const info = document.getElementById('info');
+  function frame() {
+    const pad = navigator.getGamepads()[0];
+    const app = window.__KMX.app;
+    if (pad && pad.mapping === 'standard' && pad.axes.length >= 4) {
+      stick('ls', pad.axes[0], pad.axes[1], 'Sol stick');
+      stick('rs', pad.axes[2], pad.axes[3], 'Sağ stick');
+      pad.buttons.forEach((b, i) => cells[i] && cells[i].classList.toggle('on', b.pressed));
+      info.textContent =
+        'kumanda : ' + pad.id + '\n' +
+        'mod     : ' + app.mapper.mode + '\n' +
+        'kilit   : ' + app.input.locked + '   ham girdi: ' + app.input.raw + '\n' +
+        'eksenler: ' + pad.axes.map((v) => v.toFixed(3).padStart(7)).join(' ');
+    } else {
+      stick('ls', 0, 0, 'Sol stick'); stick('rs', 0, 0, 'Sağ stick');
+      info.textContent = 'Sanal kumanda henüz bağlı değil. Başlat\'a bas.';
+    }
+    requestAnimationFrame(frame);
+  }
+  frame();
+</script>
+</body>
+</html>
