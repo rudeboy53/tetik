@@ -78,7 +78,7 @@ Varsayılan tuşlar GTA VI'nın varsayılan kumanda şemasını izler: `WASD` y�
 | `src/ui.js` | Gösterge ve ayar paneli |
 | `src/main.js` | Parçaların birbirine bağlanması |
 
-Ayarlar sayfanın `localStorage` alanında tutulur. Eklenti ağ isteği yapmaz ve veri toplamaz.
+Ayarlar sayfanın `localStorage` alanında tutulur. Eklenti ağ isteği yapmaz ve veri toplamaz. Ayrıntı için [PRIVACY.md](PRIVACY.md) dosyasına bak.
 
 ## Geliştirme
 

@@ -1,12 +1,22 @@
 {
   "manifest_version": 3,
   "name": "Tetik",
-  "version": "1.6.1",
-  "description": "Xbox Remote Play / xCloud icin klavye-mouse: yaya/arac profilleri, ham mouse girdisi, ayarlanabilir nisan egrisi.",
+  "version": "1.6.2",
+  "description": "Keyboard and mouse for Xbox Remote Play and Cloud Gaming, with on-foot and vehicle profiles and consistent mouse aim.",
+  "homepage_url": "https://github.com/rudeboy53/tetik",
   "minimum_chrome_version": "111",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
   "content_scripts": [
     {
-      "matches": ["https://www.xbox.com/*", "https://play.xbox.com/*"],
+      "matches": [
+        "https://www.xbox.com/*",
+        "https://play.xbox.com/*"
+      ],
       "js": [
         "src/config.js",
         "src/mouse.js",

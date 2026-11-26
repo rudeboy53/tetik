@@ -78,7 +78,7 @@ The content scripts run in the page's main world at `document_start` and wrap `n
 | `src/ui.js` | Indicator and settings panel |
 | `src/main.js` | Wiring |
 
-Settings are kept in the page's `localStorage`. The extension makes no network requests and collects no data.
+Settings are kept in the page's `localStorage`. The extension makes no network requests and collects no data. See [PRIVACY.md](PRIVACY.md).
 
 ## Development
 
