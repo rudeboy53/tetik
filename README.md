@@ -54,6 +54,10 @@ The small indicator at the top of the page shows the active profile. Its dot tur
 
 Default bindings follow GTA VI's default controller scheme: `WASD` move or drive, `Space` jump / handbrake, `Shift` run (left stick click), `Ctrl` crouch, left click fire, right click aim. Everything can be rebound in the panel.
 
+## Use at your own risk
+
+Emulating a controller with a keyboard and mouse may be against the terms of the streaming service or of a particular game, and some online games treat it as an unfair advantage. Tetik is intended for single-player use. You are responsible for how you use it; the authors accept no liability for account restrictions or any other consequence.
+
 ## Limitations
 
 - **The settings panel is in Turkish.** Translations are welcome.

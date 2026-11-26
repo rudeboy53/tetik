@@ -44,6 +44,9 @@ GOOD TO KNOW
 • Disable other keyboard-and-mouse extensions for Xbox streaming; two of them conflict.
 • Stream latency is not reduced, and the game's maximum turn rate still applies.
 
+USE AT YOUR OWN RISK
+Emulating a controller with a keyboard and mouse may be against the terms of the streaming service or of a particular game, and some online games treat it as an unfair advantage. Tetik is intended for single-player use. You are responsible for how you use it.
+
 PRIVACY
 Tetik makes no network requests and collects no data. Settings stay in your browser.
 
@@ -81,6 +84,9 @@ BİLMEN GEREKENLER
 • Ölçülmüş eğriler ve araç algılama, belirli oyun içi kumanda ayarlarıyla GTA VI'ya özeldir. Başka oyunlarda ölçülmüş eğriyi kapatıp elle ayar kaydırıcılarını kullan.
 • Xbox yayını için başka klavye-mouse eklentisi kullanıyorsan kapat; ikisi çakışır.
 • Yayın gecikmesi azalmaz ve oyunun azami dönüş hızı geçerliliğini korur.
+
+SORUMLULUK SENDE
+Klavye ve mouse ile kumanda taklidi, yayın hizmetinin ya da belirli bir oyunun kullanım koşullarına aykırı olabilir; bazı çevrimiçi oyunlar bunu haksız avantaj sayar. Tetik tek oyunculu kullanım için tasarlandı. Nasıl kullandığın senin sorumluluğundadır.
 
 GİZLİLİK
 Tetik ağ isteği yapmaz ve veri toplamaz. Ayarlar tarayıcında kalır.

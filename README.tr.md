@@ -54,6 +54,10 @@ Sayfanın üstündeki küçük gösterge etkin profili gösterir. Noktası kırm
 
 Varsayılan tuşlar GTA VI'nın varsayılan kumanda şemasını izler: `WASD` yürüme ya da sürüş, `Boşluk` zıplama / el freni, `Shift` koşma (sol stick tık), `Ctrl` çömelme, sol tık ateş, sağ tık nişan. Hepsi panelden değiştirilebilir.
 
+## Sorumluluk sende
+
+Klavye ve mouse ile kumanda taklidi, yayın hizmetinin ya da belirli bir oyunun kullanım koşullarına aykırı olabilir; bazı çevrimiçi oyunlar bunu haksız avantaj sayar. Tetik tek oyunculu kullanım için tasarlandı. Nasıl kullandığın senin sorumluluğundadır; hesap kısıtlaması ya da başka herhangi bir sonuç için yazarlar sorumluluk kabul etmez.
+
 ## Sınırlar
 
 - **Ayar paneli Türkçedir.** Çeviri katkıları memnuniyetle karşılanır.
