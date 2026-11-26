@@ -1,10 +1,14 @@
 # Tetik
 
+**English** · [Türkçe](README.tr.md)
+
 A Chrome extension that lets you play Xbox Remote Play / Xbox Cloud Gaming in the browser with a keyboard and mouse. It presents a virtual Xbox controller to the page and translates your input into stick and button state.
 
 It was built for one specific annoyance: in games like GTA, `W` has to mean "left stick forward" on foot and "right trigger" in a car, and a plain key-to-button mapper cannot know which one you need.
 
 > Unofficial project. Not affiliated with, endorsed by, or connected to Microsoft, Xbox, or Rockstar Games. All trademarks belong to their owners.
+
+![Settings panel next to the test page, vehicle profile active](docs/panel.png)
 
 ## What it does
 
@@ -14,6 +18,14 @@ It was built for one specific annoyance: in games like GTA, `W` has to mean "lef
 - **Measured response curves.** Games apply a dead zone and a non-linear curve to the right stick. The extension ships with curves measured in GTA VI and inverts them, including separate curves for free look and aiming and a correction for different horizontal and vertical speeds.
 - **Raw mouse input.** Pointer lock is requested with `unadjustedMovement`, which bypasses OS pointer acceleration.
 - **In-page settings panel.** Bindings, sensitivities and curve options can be changed while the stream is running. Settings can be exported and imported as JSON.
+
+## Screenshots
+
+The screenshots show the bundled test page, not a game. The panel is the same one that opens over the stream.
+
+| Vehicle profile: `W` is the right trigger, `Space` the handbrake | Mouse translation settings |
+|---|---|
+| ![Test page with the vehicle profile active](docs/drive.png) | ![Mouse settings tab](docs/mouse.png) |
 
 ## Install
 
@@ -78,7 +90,7 @@ Run the unit tests (Node 20+):
 node --test test/core.test.js
 ```
 
-`test/tester.html` loads the same scripts on a plain page and draws the virtual controller, so mappings can be tried without a console. Serve the repository root with any static server and open `/test/tester.html`.
+`test/tester.html` loads the same scripts on a plain page and draws the virtual controller, so mappings can be tried without a console. Serve the repository root with any static server and open `/test/tester.html`. Adding `?demo=drive`, `?demo=panel` or `?demo=mouse` puts the page in a simulated capture state; the screenshots above were taken that way.
 
 ## License
 

@@ -98,5 +98,5 @@
     mountUi();
   }
 
-  KMX.app = { mapper, pad, input, getConfig: () => cfg };
+  KMX.app = { mapper, pad, input, getConfig: () => cfg, getUi: () => ui };
 })(typeof globalThis !== 'undefined' ? globalThis : this);

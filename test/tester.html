@@ -76,6 +76,28 @@
     requestAnimationFrame(frame);
   }
   frame();
+
+  // Ekran goruntusu icin gosterim modu: tester.html?demo=drive | panel | mouse
+  // Gercek mouse kilidi olmadan yakalamayi taklit eder.
+  const demo = new URLSearchParams(location.search).get('demo');
+  if (demo) {
+    window.addEventListener('load', () => {
+      const app = window.__KMX.app;
+      Object.defineProperty(document, 'pointerLockElement', { get: () => document.body, configurable: true });
+      app.input.wanted = true;
+      app.input.raw = true;
+      document.dispatchEvent(new Event('pointerlockchange'));
+      app.mapper.setMode('vehicle');
+      for (const k of ['KeyW', 'KeyD', 'Space']) app.mapper.press(k);
+      setInterval(() => app.mapper.mouseMove(0.22, -0.1), 4);
+      if (demo === 'panel' || demo === 'mouse') {
+        const ui = app.getUi();
+        ui.tab = demo === 'mouse' ? 'mouse' : 'vehicle';
+        ui.panel.classList.add('open');
+        ui.renderBody();
+      }
+    });
+  }
 </script>
 </body>
 </html>
